@@ -18,7 +18,7 @@ Base *generate(void){
 }
 
 void identify(Base* p){
-    if (dynamic_cast<A*>(p))
+    if (dynamic_cast<A*>(p)) //devuelve NULL si falla
         std::cout << "Identified by pointer: A" << std::endl;
     else if (dynamic_cast<B*>(p))
         std::cout << "Identified by pointer: B" << std::endl;
@@ -30,7 +30,7 @@ void identify(Base* p){
 
 void identify(Base& p) {
     try {
-        (void)dynamic_cast<A&>(p);
+        (void)dynamic_cast<A&>(p); //lanza una exceptción si falla
         std::cout << "Identified by reference: A" << std::endl;
         return;
     } 

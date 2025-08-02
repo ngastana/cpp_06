@@ -15,6 +15,7 @@ class Serialize
     public:
         static uintptr_t serialize(Data* ptr);
         static Data* deserialize(uintptr_t raw);
+        //uintptr_t es un entro sin signo lo suficientemente grande como para almacenar cualquier dirección de memoria (o puntero). uint -> unsigned integer, ptr -> pointer, _t -> type
 };
 
 #endif
