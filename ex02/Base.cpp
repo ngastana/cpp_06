@@ -33,31 +33,19 @@ void identify(Base& p) {
         (void)dynamic_cast<A&>(p); //lanza una exceptción si falla
         std::cout << "Identified by reference: A" << std::endl;
         return;
-    } 
-	catch (const std::exception& e)
-	{
-		std::cerr << "Class is not type A" << e.what() << std::endl;
-	}
+    } catch (const std::exception&){}
 
     try {
         (void)dynamic_cast<B&>(p);
         std::cout << "Identified by reference: B" << std::endl;
         return;
-    }
-    catch (const std::exception& e)
-	{
-		std::cerr << "Class is not type B" << e.what() << std::endl;
-	}
+    } catch (const std::exception&){}
 
     try {
         (void)dynamic_cast<C&>(p);
         std::cout << "Identified by reference: C" << std::endl;
         return;
-    }
-    catch (const std::exception& e)
-	{
-		std::cerr << "Class is not type C" << e.what() << std::endl; 
-	}
+    } catch (const std::exception&){}
 
     std::cout << "Unknown type (reference)" << std::endl;
 }
